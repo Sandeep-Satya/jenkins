@@ -21,6 +21,13 @@ pipeline {
     post { // Actions to run after the pipeline finishes
         always {
             echo 'I will always say Hello again!'
+            cleanWs() // Cleans up the workspace
+        }
+        success {
+            echo 'I succeeded!'
+        }
+        failure {
+            echo 'I failed!'
         }
     }
 }
