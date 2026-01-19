@@ -5,22 +5,12 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building..' // A basic Pipeline step to print a message
-                script{
-                    sh """ 
-                    echo "This is a multi-line script block"
-
-                    """
-                }
             }
         }
         stage('Test') {
             steps {
                 echo 'Testing..'
-                script{
-                    sh """
-                        echo "Building"
-                    """
-                }
+            }
         }
         stage('Deploy') {
             steps {
