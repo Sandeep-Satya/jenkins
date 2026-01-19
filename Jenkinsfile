@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                echo 'Building..' // A basic Pipeline step to print a message
+                
                 script{
                     sh """ 
                     echo "This is a multi-line script block"
