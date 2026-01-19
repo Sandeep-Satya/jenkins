@@ -10,7 +10,7 @@ pipeline {
                 script{
                     sh """ 
                     echo "This is a multi-line script block"
-                    echo ${SAMPLE_ENV}
+                    echo $SAMPLE_ENV
                     """
                 }
             }
