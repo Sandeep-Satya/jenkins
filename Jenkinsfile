@@ -1,7 +1,7 @@
 pipeline {
     agent any // Specifies where the entire pipeline will execute
     
-    envoironment {
+    environment {
         SAMPLE_ENV = "SAMPLE"
     }
     stages {
