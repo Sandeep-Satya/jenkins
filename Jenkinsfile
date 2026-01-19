@@ -3,8 +3,7 @@ pipeline {
 
     stages {
         stage('Build') {
-            steps {
-                
+            steps {              
                 script{
                     sh """ 
                     echo "This is a multi-line script block"
@@ -15,12 +14,12 @@ pipeline {
         }
         stage('Test') {
             steps {
-                echo 'Testing..'
                 script{
                     sh """
-                        echo "Building"
+                        echo "testing"
                     """
                 }
+            }
         }
         stage('Deploy') {
             steps {
