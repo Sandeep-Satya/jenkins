@@ -1,13 +1,16 @@
 pipeline {
     agent any // Specifies where the entire pipeline will execute
-
+    
+    envoironment {
+        SAMPLE_ENV = "SAMPLE"
+    }
     stages {
         stage('Build') {
             steps {              
                 script{
                     sh """ 
                     echo "This is a multi-line script block"
-
+                    echo ${SAMPLE_ENV}
                     """
                 }
             }
