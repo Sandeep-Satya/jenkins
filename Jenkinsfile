@@ -1,6 +1,7 @@
 pipeline {
     agent any // Specifies where the entire pipeline will execute
-    
+    // this is pre build section
+    // this pre build section is used to define environment variables, options, and parameters
     environment {
         SAMPLE_ENV = "SAMPLE"
     }
@@ -46,6 +47,14 @@ pipeline {
             }
         }
         stage('Deploy') {
+            input {
+                 message "Should we continue?"
+                 ok "Yes, we should."
+                 submitter "alice,bob"
+                 parameters {
+                    string(name: 'PERSON', defaultValue: 'Mr Jenkins', description: 'Who should I say hello to?')
+                 }
+             }
             steps {
                 echo 'Deploying....'
             }
