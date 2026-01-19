@@ -23,7 +23,7 @@ pipeline {
                     sh """ 
                     echo "This is a multi-line script block"
                     echo $SAMPLE_ENV
-                    // sleep 10
+                    #sleep 10
                     env
                     
                         echo "Hello ${params.PERSON}"
