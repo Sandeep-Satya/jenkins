@@ -16,6 +16,7 @@ pipeline {
         choice(name: 'CHOICE', choices: ['One', 'Two', 'Three'], description: 'Pick something')
         password(name: 'PASSWORD', defaultValue: 'SECRET', description: 'Enter a password')
     }
+    // this is build section
     stages {
         stage('Build') {
             steps {              
@@ -24,7 +25,7 @@ pipeline {
                     echo "This is a multi-line script block"
                     echo $SAMPLE_ENV
                     #sleep 10
-                    env
+                    #env
                     
                         echo "Hello ${params.PERSON}"
                         echo "Biography: ${params.BIOGRAPHY}"
