@@ -11,6 +11,7 @@ pipeline {
                     sh """ 
                     echo "This is a multi-line script block"
                     echo $SAMPLE_ENV
+                    env
                     """
                 }
             }
