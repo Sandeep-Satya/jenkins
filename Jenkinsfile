@@ -4,6 +4,11 @@ pipeline {
     environment {
         SAMPLE_ENV = "SAMPLE"
     }
+
+    options {
+        timeout(time: 10, unit: 'SECONDS') // Sets a timeout for the pipeline
+        disableConcurrentBuilds()
+    }
     stages {
         stage('Build') {
             steps {              
@@ -11,6 +16,7 @@ pipeline {
                     sh """ 
                     echo "This is a multi-line script block"
                     echo $SAMPLE_ENV
+                    sleep 10
                     env
                     """
                 }
@@ -41,6 +47,9 @@ pipeline {
         }
         failure {
             echo 'I failed!'
+        }
+        aborted {
+            echo 'pipeline is aborted'
         }
     }
 }
